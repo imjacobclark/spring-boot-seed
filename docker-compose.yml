@@ -1,0 +1,10 @@
+version: "2"
+services:
+    database:
+        image: postgres:9.5
+        environment:
+            - POSTGRES_PASSWORD=website
+            - POSTGRES_USER=website
+            - POSTGRES_DB=website
+        ports:
+            - "9000:5432"

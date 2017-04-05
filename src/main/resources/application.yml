@@ -1,0 +1,21 @@
+spring:
+  profiles.active: production
+---
+spring:
+  profiles: development
+
+---
+spring:
+  profiles: production
+
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:9000/${DATABASE}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+    driverClassName: org.postgresql.Driver
